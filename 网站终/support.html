@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>心理支持 - Turning Point</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        header {
+            background-color: #003b77;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        .intro {
+            background-color: #ffffff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .intro h2 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .intro p {
+            font-size: 14px;
+        }
+
+        .intro a {
+            color: #003b77;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .chat-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+            margin: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: 400px;
+            overflow-y: auto;
+        }
+
+        .chat-message {
+            display: flex;
+            margin-bottom: 10px;
+            max-width: 80%;
+        }
+
+        .chat-message p {
+            margin: 0;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 14px;
+            word-wrap: break-word;
+        }
+
+        .user-message {
+            background-color: #66b3ff;
+            color: white;
+            margin-left: auto;
+        }
+
+        .bot-message {
+            background-color: #e0e0e0;
+            color: #333;
+        }
+
+        .chat-input-container {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-input {
+            width: 80%;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .send-button {
+            background-color: #003b77;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .send-button:hover {
+            background-color: #005bb5;
+        }
+
+        footer {
+            background-color: #003b77;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>心理支持 - Turning Point</h1>
+    </header>
+
+    <div class="intro">
+        <h2>在线心理咨询服务</h2>
+        <p>我们为您提供一个在线心理咨询服务平台，帮助您解决心理健康问题。无论您是在学业上、生活上遇到困难，还是需要心理疏导，您都可以通过我们获得专业的支持。</p>
+        <p>如果您想了解更多关于心理支持的信息，可以访问 <a href="https://www.turningpoint.org.au" target="_blank">Turning Point 官网</a>。</p>
+    </div>
+
+    <div class="chat-container">
+        <!-- Chat messages will appear here -->
+        <div class="chat-message bot-message">
+            <p>您好！我是 Turning Point 的心理支持机器人。有什么可以帮您的吗？</p>
+        </div>
+    </div>
+
+    <div class="chat-input-container">
+        <input type="text" id="chat-input" class="chat-input" placeholder="请输入您的问题...">
+        <button class="send-button" onclick="sendMessage()">发送</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Deakin University & Turning Point. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function sendMessage() {
+            const inputField = document.getElementById('chat-input');
+            const message = inputField.value.trim();
+            
+            if (message === '') return;
+
+            // Create user message
+            const userMessageDiv = document.createElement('div');
+            userMessageDiv.classList.add('chat-message', 'user-message');
+            userMessageDiv.innerHTML = `<p>${message}</p>`;
+            document.querySelector('.chat-container').appendChild(userMessageDiv);
+
+            // Simulate bot response after user sends message
+            setTimeout(function() {
+                const botMessageDiv = document.createElement('div');
+                botMessageDiv.classList.add('chat-message', 'bot-message');
+                botMessageDiv.innerHTML = `<p>谢谢您的问题！我们的心理专家会尽快回复您。</p>`;
+                document.querySelector('.chat-container').appendChild(botMessageDiv);
+
+                // Scroll to bottom of chat
+                document.querySelector('.chat-container').scrollTop = document.querySelector('.chat-container').scrollHeight;
+            }, 1000);
+
+            // Clear input field
+            inputField.value = '';
+        }
+    </script>
+
+</body>
+</html>

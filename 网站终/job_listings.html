@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>工作机会 - Turning Point</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f9fc; /* Light background */
+            color: #333;
+        }
+        header {
+            background-color: #003b77; /* Blue background */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .search-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #66b3cc; /* Modified background color */
+            align-items: center;
+        }
+        .search-container input, .search-container select, .search-container button {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .search-container button {
+            background-color: #005bb5;
+            color: white;
+            cursor: pointer;
+        }
+        .search-container button:hover {
+            background-color: #003b77;
+        }
+        .search-container input, .search-container select {
+            width: 250px;
+        }
+        .job-list {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Ensures responsive layout */
+            gap: 20px;
+        }
+        .job-card {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-decoration: none; /* Remove underline on job card */
+        }
+        .job-card h3 {
+            font-size: 20px;
+            margin: 0;
+            text-decoration: none; /* Remove underline */
+        }
+        .job-card p {
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        .job-card .job-info {
+            font-size: 12px;
+            color: #555;
+        }
+        footer {
+            background-color: #003b77;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            .search-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .search-container input, .search-container select, .search-container button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>工作机会</h1>
+    </header>
+
+    <div class="search-container">
+        <input type="text" placeholder="Search Jobs...">
+        <select>
+            <option value="any">Any Job Type</option>
+            <option value="full-time">Full Time</option>
+            <option value="part-time">Part Time</option>
+        </select>
+        <input type="text" placeholder="Location">
+        <button>Search</button>
+    </div>
+
+    <div class="job-list">
+        <!-- Job Listings with 12 entries now -->
+        <a href="job_details.html?job=1" class="job-card">
+            <h3>职位: 咖啡馆服务员</h3>
+            <p>要求: 时间灵活，责任心强。</p>
+            <p>联系方式: cafe@example.com</p>
+        </a>
+
+        <a href="job_details.html?job=2" class="job-card">
+            <h3>职位: 兼职销售</h3>
+            <p>要求: 销售经验优先。</p>
+            <p>联系方式: sales@example.com</p>
+        </a>
+
+        <a href="job_details.html?job=3" class="job-card">
+            <h3>职位: 客户支持代表</h3>
+            <p>要求: 良好的沟通和解决问题的能力。</p>
+            <p>联系方式: support@example.com</p>
+        </a>
+
+        <a href="job_details.html?job=4" class="job-card">
+            <h3>职位: 市场营销专员</h3>
+            <p>要求: 具有市场营销经验。</p>
+            <p>联系方式: marketing@example.com</p>
+        </a>
+
+        <a href="job_details.html?job=5" class="job-card">
+            <h3>职位: 软件开发工程师</h3>
+            <p>要求: 熟悉编程语言和软件开发流程。</p>
+            <p>联系方式: hr@example.com</p>
+        </a>
+
+        <a href="job_details.html?job=6" class="job-card">
+            <h3>职位: 数据分析师</h3>
+            <p>要求: 精通数据分析工具。</p>
+            <p>联系方式: hr@example.com</p>
+        </a>
+
+        <a href="job_details.html?job=7" class="job-card">
+            <h3>职位: 网络安全工程师</h3>
+            <p>要求: 深入了解信息安全和网络防护。</p>
+            <p>联系方式: security@example.com</p>
+        </a>
+
+        <a href="job_details.html?job=8" class="job-card">
+            <h3>职位: 供应链管理专员</h3>
+            <p>要求: 有供应链或物流管理经验。</p>
+            <p>联系方式: logistics@example.com</p>
+        </a>
+
+        <a href="job_details.html?job=9" class="job-card">
+            <h3>职位: 人力资源经理</h3>
+            <p>要求: 具有丰富的招聘和员工管理经验。</p>
+            <p>联系方式: hr@example.com</p>
+        </a>
+
+        <a href="job_details.html?job=10" class="job-card">
+            <h3>职位: 产品经理</h3>
+            <p>要求: 能够独立推进产品的规划和执行。</p>
+            <p>联系方式: product@example.com</p>
+        </a>
+
+        <a href="job_details.html?job=11" class="job-card">
+            <h3>职位: 财务分析师</h3>
+            <p>要求: 精通财务分析和财务报表。</p>
+            <p>联系方式: finance@example.com</p>
+        </a>
+
+        <a href="job_details.html?job=12" class="job-card">
+            <h3>职位: 客服经理</h3>
+            <p>要求: 具有良好的客户服务和团队管理能力。</p>
+            <p>联系方式: customer-service@example.com</p>
+        </a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Deakin University & Turning Point. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

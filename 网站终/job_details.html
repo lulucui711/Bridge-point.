@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>职位详情 - Turning Point</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f9fc;
+            color: #333;
+        }
+        header {
+            background-color: #003b77;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .job-details {
+            padding: 20px;
+            background-color: #fff;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .submit-resume {
+            margin-top: 20px;
+        }
+        .submit-resume button {
+            background-color: #005bb5;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+        .submit-resume button:hover {
+            background-color: #003b77;
+        }
+
+        /* Chatbox */
+        .chat-box {
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        /* Chat message styles */
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .message.left {
+            flex-direction: row;
+        }
+
+        .message.right {
+            flex-direction: row-reverse;
+        }
+
+        .message .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .message .chat-bubble {
+            max-width: 70%;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 14px;
+            word-wrap: break-word;
+        }
+
+        .message.left .chat-bubble {
+            background-color: #e5e5e5; /* Grey for left (recruiter) */
+            color: #333;
+        }
+
+        .message.right .chat-bubble {
+            background-color: #66b3cc; /* Blue for right (applicant) */
+            color: white;
+        }
+
+        /* Comment Section */
+        .comment-section {
+            display: flex;
+            margin-top: 20px;
+            align-items: center;
+        }
+
+        .comment-section input {
+            width: 80%;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+        }
+
+        .comment-section button {
+            padding: 10px 15px;
+            background-color: #003b77;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .comment-section button:hover {
+            background-color: #005bb5;
+        }
+
+        footer {
+            background-color: #003b77;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>职位详情</h1>
+    </header>
+
+    <div class="job-details">
+        <h3 id="job-title">职位: 咖啡馆服务员</h3>
+        <p id="job-description">要求: 时间灵活，责任心强。</p>
+        <p>联系方式: cafe@example.com</p>
+
+        <!-- Submit Resume Section -->
+        <div class="submit-resume">
+            <h4>提交简历：</h4>
+            <input type="file" accept=".pdf,.doc,.docx">
+            <br><br>
+            <button>提交简历</button>
+        </div>
+
+        <!-- Chat Section -->
+        <div class="chat-box">
+            <div class="message left">
+                <img src="recruiter-avatar.png" alt="Recruiter Avatar" class="avatar">
+                <div class="chat-bubble">
+                    <strong>招聘官:</strong> 如果您有意向，请联系我们
+                </div>
+            </div>
+            <div class="message right">
+                <img src="applicant-avatar.png" alt="Applicant Avatar" class="avatar">
+                <div class="chat-bubble">
+                    <strong>应聘者:</strong> 我对这个职位很感兴趣，如何申请呢？
+                </div>
+            </div>
+            <div class="message left">
+                <img src="recruiter-avatar.png" alt="Recruiter Avatar" class="avatar">
+                <div class="chat-bubble">
+                    <strong>招聘官:</strong> 请通过简历提交系统提交您的简历，我们会尽快与您联系。
+                </div>
+            </div>
+            <div class="message right">
+                <img src="applicant-avatar.png" alt="Applicant Avatar" class="avatar">
+                <div class="chat-bubble">
+                    <strong>应聘者:</strong> 好的，我会尽快提交。
+                </div>
+            </div>
+        </div>
+
+        <!-- Comment Section -->
+        <div class="comment-section">
+            <input type="text" placeholder="输入您的评论...">
+            <button>提交评论</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Deakin University & Turning Point. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+

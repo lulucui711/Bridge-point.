@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Your Country</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        header {
+            background-color: #003b77;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 24px;
+        }
+        section {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        .country-box {
+            background-color: #006a88;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            transition: transform 0.2s;
+        }
+        .country-box:hover {
+            transform: translateY(-5px);
+        }
+        .country-box h3 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        footer {
+            background-color: #003b77;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Select Your Country</h1>
+        <p>Choose your country to explore tailored resources</p>
+    </header>
+
+    <section>
+        <a href="career.html" class="country-box">
+            <h3>China</h3>
+        </a>
+        <a href="#" class="country-box">
+            <h3>Korea</h3>
+        </a>
+        <a href="#" class="country-box">
+            <h3>Japan</h3>
+        </a>
+        <a href="#" class="country-box">
+            <h3>Vietnam</h3>
+        </a>
+        <a href="#" class="country-box">
+            <h3>Cambodia</h3>
+        </a>
+        <a href="#" class="country-box">
+            <h3>Thailand</h3>
+        </a>
+        <a href="#" class="country-box">
+            <h3>India</h3>
+        </a>
+        <a href="#" class="country-box">
+            <h3>Other</h3>
+        </a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Deakin University. All rights reserved.</p>
+    </footer>
+</body>
+</html>

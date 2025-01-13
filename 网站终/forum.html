@@ -1,0 +1,149 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>交流论坛 - Turning Point</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; background-color: #ffffff; color: #000; }
+        header { background-color: #003b77; color: #fff; padding: 20px; text-align: center; }
+        section { padding: 20px; }
+        .post { padding: 20px; margin-bottom: 20px; border-radius: 10px; }
+        .experience { background-color: #e0f7fa; }
+        .help { background-color: #ffe0f0; }
+        .comments { margin-top: 10px; background-color: #e9e9e9; padding: 10px; border-radius: 5px; }
+        button {
+            margin: 5px;
+            padding: 8px 15px;
+            font-size: 14px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover { background-color: #555; }
+        textarea, select {
+            width: 100%;
+            margin: 10px 0;
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>交流论坛</h1>
+        <p>分享经验与寻求帮助</p>
+    </header>
+    <section>
+        <!-- 发表新帖 -->
+        <div>
+            <h2>发表新帖子</h2>
+            <select id="postType">
+                <option value="experience">经验分享</option>
+                <option value="help">求助</option>
+            </select>
+            <textarea id="postContent" placeholder="请输入帖子内容..."></textarea>
+            <button onclick="addPost()">发表帖子</button>
+        </div>
+
+        <!-- 已有帖子 -->
+        <div id="postContainer">
+            <h2>帖子列表</h2>
+            <!-- 示例帖子 -->
+            <div class="post experience">
+                <h3>经验分享: 找到第一份实习</h3>
+                <p>校友A: 多参加校内招聘活动。</p>
+                <button onclick="alert('已点赞')">点赞</button>
+                <button onclick="alert('已收藏')">收藏</button>
+                <textarea placeholder="发表评论..."></textarea>
+                <button onclick="submitComment('commentBox1', 'commentSection1')">提交评论</button>
+                <div class="comments" id="commentSection1">
+                    <h4>评论：</h4>
+                </div>
+            </div>
+            <div class="post help">
+                <h3>求助: 如何提升写作能力？</h3>
+                <p>学生B: 英文写作提升很难，希望大家帮忙。</p>
+                <button onclick="alert('已点赞')">点赞</button>
+                <button onclick="alert('已收藏')">收藏</button>
+                <textarea placeholder="发表评论..."></textarea>
+                <button onclick="submitComment('commentBox2', 'commentSection2')">提交评论</button>
+                <div class="comments" id="commentSection2">
+                    <h4>评论：</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // 添加新帖子
+        function addPost() {
+            const postType = document.getElementById("postType").value;
+            const postContent = document.getElementById("postContent").value.trim();
+
+            if (postContent === "") {
+                alert("帖子内容不能为空！");
+                return;
+            }
+
+            // 创建帖子元素
+            const newPost = document.createElement("div");
+            newPost.classList.add("post");
+            newPost.classList.add(postType === "experience" ? "experience" : "help");
+
+            const title = document.createElement("h3");
+            title.textContent = postType === "experience" ? "经验分享" : "求助";
+
+            const content = document.createElement("p");
+            content.textContent = postContent;
+
+            // 按钮
+            const likeButton = document.createElement("button");
+            likeButton.textContent = "点赞";
+            likeButton.onclick = () => alert("已点赞");
+
+            const favoriteButton = document.createElement("button");
+            favoriteButton.textContent = "收藏";
+            favoriteButton.onclick = () => alert("已收藏");
+
+            const commentBox = document.createElement("textarea");
+            commentBox.placeholder = "发表评论...";
+
+            const commentButton = document.createElement("button");
+            commentButton.textContent = "提交评论";
+            commentButton.onclick = () => {
+                const commentText = commentBox.value.trim();
+                if (commentText === "") {
+                    alert("评论内容不能为空！");
+                    return;
+                }
+                const comment = document.createElement("p");
+                comment.textContent = commentText;
+                commentsContainer.appendChild(comment);
+                commentBox.value = "";
+            };
+
+            const commentsContainer = document.createElement("div");
+            commentsContainer.classList.add("comments");
+
+            // 组装帖子内容
+            newPost.appendChild(title);
+            newPost.appendChild(content);
+            newPost.appendChild(likeButton);
+            newPost.appendChild(favoriteButton);
+            newPost.appendChild(commentBox);
+            newPost.appendChild(commentButton);
+            newPost.appendChild(commentsContainer);
+
+            // 添加帖子到帖子列表
+            document.getElementById("postContainer").appendChild(newPost);
+
+            // 清空输入框
+            document.getElementById("postContent").value = "";
+        }
+    </script>
+</body>
+</html>

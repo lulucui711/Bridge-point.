@@ -1,0 +1,140 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career - Bridge Point</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Pure white background */
+            color: #333;
+        }
+        header {
+            background-color: #003b77;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+        section {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px;
+            align-items: center;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            width: 60%;
+        }
+        .card {
+            padding: 20px;
+            border-radius: 8px;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .alumni {
+            background-color: #003b77; /* Alumni Resources - Dark blue */
+        }
+        .experience {
+            background-color: #66b3ff; /* Experience Accumulation - Light blue */
+        }
+        .psychological {
+            background-color: #99ccff; /* Psychological Support - Lighter blue */
+        }
+        .forum {
+            background-color: #3399cc; /* Exchange Forum - Blue */
+        }
+        .card h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .card p {
+            font-size: 14px;
+        }
+        .image-container {
+            width: 35%;
+            text-align: center;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        footer {
+            background-color: #003b77;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        @media (max-width: 768px) {
+            section {
+                flex-direction: column; /* Stack image and cards on top of each other on small screens */
+                align-items: flex-start;
+            }
+            .cards {
+                width: 100%; /* Make the cards section full width */
+            }
+            .image-container {
+                width: 100%; /* Make the image section full width on small screens */
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bridge Point - Career Support</h1>
+    </header>
+
+    <section>
+        <!-- Cards Section -->
+        <div class="cards">
+            <!-- Alumni Resources with Link to job listings -->
+            <div class="card alumni">
+                <h3><a href="job_listings.html" style="color: white; text-decoration: none;">校友资源</a></h3>
+                <p>Support for Deakin alumni to share their experiences and network.</p>
+            </div>
+
+            <!-- Experience Accumulation with Updated Title and Link to activities -->
+            <div class="card experience">
+                <h3><a href="activities.html" style="color: white; text-decoration: none;">资源积累</a></h3>
+                <p>Helping you build and showcase valuable experiences.</p>
+            </div>
+
+            <!-- Psychological Support (updated to link to support page) -->
+            <div class="card psychological">
+                <h3><a href="support.html" style="color: white; text-decoration: none;">心理咨询</a></h3>
+                <p>Providing emotional and mental support for students and alumni.</p>
+            </div>
+
+            <!-- Exchange Forum -->
+            <div class="card forum">
+                <h3><a href="forum.html" style="color: white; text-decoration: none;">论坛交流</a></h3>
+                <p>A platform for exchanging ideas and experiences within the community.</p>
+            </div>
+        </div>
+
+        <!-- Image Section (with new image) -->
+        <div class="image-container">
+            <img src="12.png" alt="Bridge Point Image"> <!-- Updated Image -->
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Deakin University & Turning Point. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+
